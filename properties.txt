@@ -1,0 +1,5 @@
+6rXaQTLAjLDhV8YO
+mongodb+srv://rk5970869:6rXaQTLAjLDhV8YO@devconnect.4amuq.mongodb.net/
+
+updated the validate method in the "password" section of user schema
+and also addd the validate method for the "email" section in user schema
