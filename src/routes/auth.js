@@ -5,6 +5,7 @@ const bcrypt=require("bcrypt");
 const {validateSignUpData} = require("../utils/validation.js");
 
 
+
 authRouter.post("/signup",async (req, res)=>{
    
     //creating a new instance of the User model
@@ -48,7 +49,7 @@ authRouter.post("/login",async (req, res)=>{
             //console.log(token);
 
             //Add token to cokie and sned the response bck to the user
-            res.cookie("token",token);
+            res.cookie("token",token,{expires:new Date(Date.now()+8*3600000),});
 
             res.send("Login Successfully");
         }
@@ -61,6 +62,14 @@ authRouter.post("/login",async (req, res)=>{
     catch(err){
         res.status(500).send("Something Went Wrong.Please try again "+err.message);
     }
+});
+authRouter.post("/logout",async (req,res)=>{
+    res
+    .cookie("token",null,{
+        expires:new Date(Date.now()),
+    })
+    .send("successfully logged out");
+
 });
 
 
