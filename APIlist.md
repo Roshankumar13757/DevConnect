@@ -11,10 +11,9 @@
     -PATCH/profile/password
 
 ## connectionRequestRouter
-    -POST/request/send/intrested/:userId
-    -POST/request/send/ignored/:userId
-    -POST/request/review/accepted/:requestId
-    -POST/request/review/rejected/:requestId
+    -POST/request/send/:status/:userId //status- intrested,ignored (sender's end)
+    -POST/request/review/:status/:requestId //status- accepted, rejected (reciever's end)
+ 
 
 ## userRouter
     -GET/user/connections
