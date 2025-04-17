@@ -3,13 +3,10 @@ const connectDB=require("./config/database.js");
 const app= express();
 const cookieParser=require("cookie-parser");
 
-
 const port=7777;
-
 
 app.use(express.json());
 app.use(cookieParser());
-
 
 const authRouter=require("./routes/auth.js");
 const profileRouter=require("./routes/profile.js");
@@ -98,9 +95,9 @@ app.use("/",requestRouter);
 
 
 connectDB().then(()=>{
-    console.log("Connection Successful");
+    console.log("DB is Online");
     app.listen(port, ()=> {
-        console.log("server is listning successfully on port 7777");
+        console.log("server is Online");
     });
 }).catch(err=>{
     console.error("Can't connect to Database!!! ");

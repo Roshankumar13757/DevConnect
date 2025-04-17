@@ -39,10 +39,15 @@ const userSchema=mongoose.Schema({
     } ,
     gender:{
         type: String,
-        validate(value){
-            if(!["male","female","others"].includes(value)){
-                throw new Error("Please Enter a valid Gender!!!");
-            }
+        // validate(value){
+        //     if(!["male","female","others"].includes(value)){
+        //         throw new Error("Please Enter a valid Gender!!!");
+        //     }
+        // }
+        enum:{
+            values:["male","female","others"],
+            message:`{VALUE} is not valid gender type`
+            
         }
         
     } ,

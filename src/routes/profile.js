@@ -5,7 +5,7 @@ const {validateEditProfileData}=require("../utils/validation.js");
 const profileRouter=express.Router();
 const bcrypt=require("bcrypt");
 
-profileRouter.get("/profile",userAuth,async (req, res)=>{
+profileRouter.get("/profile/view",userAuth,async (req, res)=>{
     try{
        
         const user= req.user;
@@ -37,7 +37,7 @@ profileRouter.patch("/profile/edit",userAuth,async(req, res)=>{
                     ])
                 ];
     
-                loggedInUser.skills = mergedSkills; // ✅ apply to user
+                loggedInUser.skills = mergedSkills; //  apply to user
             }
     
             // Update other fields

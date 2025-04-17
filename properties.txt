@@ -3,3 +3,10 @@ mongodb+srv://rk5970869:6rXaQTLAjLDhV8YO@devconnect.4amuq.mongodb.net/
 
 updated the validate method in the "password" section of user schema
 and also addd the validate method for the "email" section in user schema
+
+#schema.pre("save") function
+
+-indexing in db
+    to make fecthing data from db faster,also
+    when we set value unique in the schema it creates the index by itself so no need to add index in that schema
+    normal index,compound index
